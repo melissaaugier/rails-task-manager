@@ -1,0 +1,13 @@
+<h1><%= @task.title %></h1>
+
+<%= link_to 'Edit the task', edit_path, { class: "btn btn-primary mt-3 text-right" } %>
+
+
+<p class="details alert alert-light"><%= @task.details %></p>
+
+<p>
+  <input type="checkbox" name="completed" <%= @task.completed ? 'checked' : '' %>>
+  <%= @task.completed ? 'This task is completed' : 'This task is not completed yet'%>
+</p>
+
+<%= link_to 'Back to list', root_path, { class: "btn btn-primary mt-3" } %>

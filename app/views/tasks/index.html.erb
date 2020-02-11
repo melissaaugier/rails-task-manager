@@ -1,0 +1,18 @@
+<h1>My tasks</h1>
+
+<ul class="list-group w-25">
+  <% @tasks.each do |task| %>
+  <li class="list-group-item">
+    <input type="checkbox" name="completed" <%= task.completed ? 'checked' : '' %>>
+    <%= link_to task.title, task_path(task.id) %>
+    <%= link_to "Delete", task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+  </li>
+  <% end %>
+</ul>
+
+<div class="border-top mt-3">
+  <%= link_to '+ Create new', new_path, { class: "btn btn-secondary mt-3" } %>
+</div>
+
